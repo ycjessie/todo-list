@@ -24,6 +24,16 @@ class App extends Component {
         {/* refering to line 8 for STATE */}
         {/* use Broswer component to remove items in state */}
         <TasksList tasks={this.state.tasks}/>
+        <hr/>
+        {/* add a text box for add a task */}
+        <form>
+            <input 
+              type="text"
+              placeholder="add a task here!"/>
+            <button>Add Task</button>
+
+        </form>
+        <hr/>
         {/* referece to line 11 for function click */}
         <button onClick={this.markAllDone}>Mark All Done</button>
         {/* <TasksList tasks={this.props.tasks}/> */}
