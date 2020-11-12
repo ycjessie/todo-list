@@ -29,12 +29,14 @@ class App extends Component {
         {/* use Broswer component to remove items in state */}
         <TasksList tasks={this.state.tasks}/>
         <hr/>
-        {/* add a text box for add a task */}
-        <form>
+        {/* add a text box for add a task use onClick on button*/}
+        {/* or use onSubmit */}
+        <form onSubmit={this.addTask}>
             <input 
               type="text"
               placeholder="add a task here!"/>
-            <button onClick={this.addTask}>Add Task</button>
+            {/* <button onClick={this.addTask}>Add Task</button> */}
+            <button type="submit">Add Task</button>
 
         </form>
         <hr/>
