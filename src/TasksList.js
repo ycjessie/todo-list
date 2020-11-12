@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import TaskItem from './TaskItem'
 class TasksList extends Component {
     render() { 
+        // map() comes with index, can rename as different name
         let allTaskitems=this.props.tasks.map((task,index)=>{
+            //MUST use KEY is the REACT term in ARRAY
             return (<TaskItem task={task} key={index}/> )
         })
         return (
