@@ -20,8 +20,9 @@ class App extends Component {
     //event.target get the whole form on console log
     //event.target[0] is to get the input box text
     console.log("add a task:", event.target[0].value);
-    this.setState({
-      //use Spread oprator instead of Push()
+    this.setState({//setState REACT to refresh UI
+      //for ARRAY use Spread operator not Push() to state or props
+      //to not touch the original Array
       tasks:[...this.state.tasks,event.target[0].value],
     })
   }
