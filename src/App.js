@@ -15,6 +15,10 @@ class App extends Component {
       tasks:[],
     });
   }
+  addTask=(event)=>{
+    event.preventDefault();//the whole page will not reload
+    console.log("add a task");
+  }
   render() { 
     return (
     <>
@@ -30,7 +34,7 @@ class App extends Component {
             <input 
               type="text"
               placeholder="add a task here!"/>
-            <button>Add Task</button>
+            <button onClick={this.addTask}>Add Task</button>
 
         </form>
         <hr/>
