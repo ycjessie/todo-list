@@ -6,6 +6,7 @@ class App extends Component {
     super(props)
     this.state={
       tasks:props.tasks,//a copy of the task inherit from parent
+      newItem:'My Test Item',
     }
   }
   //Click function refer line 25
@@ -16,7 +17,19 @@ class App extends Component {
     });
   }
   addTask=(event)=>{
+   
     event.preventDefault();
+    console.log('it works')
+    this.setState({
+      tasks:[...this.state.tasks, this.state.newItem],
+      newItem:'',
+    })
+  }
+  onTextBoxChange=(event)=>{
+    console.log('on text change',event.target.value)
+    this.setState({
+      newItem:event.target.value,
+    });
   }
   render() { 
     return (
@@ -33,7 +46,11 @@ class App extends Component {
         <form>
             <input 
               type="text"
-              placeholder="add a new task here!"/>
+              value={this.state.newItem}
+              onChange={this.onTextBoxChange}
+              placeholder="add a new task here!"
+              />
+              
             <button onClick={this.addTask}>Add Task</button>
             {/* <button type="submit">Add Task</button> */}
 
