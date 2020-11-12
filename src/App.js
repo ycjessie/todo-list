@@ -19,7 +19,11 @@ class App extends Component {
     event.preventDefault();//the whole page will not reload
     //event.target get the whole form on console log
     //event.target[0] is to get the input box text
-    console.log("add a task", event.target);
+    console.log("add a task:", event.target[0].value);
+    this.setState({
+      //use Spread oprator instead of Push()
+      tasks:[...this.state.tasks,event.target[0].value],
+    })
   }
   render() { 
     return (
