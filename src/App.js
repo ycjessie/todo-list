@@ -16,15 +16,7 @@ class App extends Component {
     });
   }
   addTask=(event)=>{
-    event.preventDefault();//the whole page will not reload
-    //event.target get the whole form on console log
-    //event.target[0] is to get the input box text
-    console.log("add a task:", event.target[0].value);
-    this.setState({//setState REACT to refresh UI
-      //for ARRAY use Spread operator not Push() to state or props
-      //to not touch the original Array
-      tasks:[...this.state.tasks,event.target[0].value],
-    })
+    event.preventDefault();
   }
   render() { 
     return (
@@ -38,12 +30,12 @@ class App extends Component {
         <hr/>
         {/* add a text box for add a task use onClick on button*/}
         {/* or use onSubmit */}
-        <form onSubmit={this.addTask}>
+        <form>
             <input 
               type="text"
               placeholder="add a new task here!"/>
-            {/* <button onClick={this.addTask}>Add Task</button> */}
-            <button type="submit">Add Task</button>
+            <button onClick={this.addTask}>Add Task</button>
+            {/* <button type="submit">Add Task</button> */}
 
         </form>
         <hr/>
