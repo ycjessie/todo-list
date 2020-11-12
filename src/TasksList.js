@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import TaskItem from './TaskItem'
 class TasksList extends Component {
     render() { 
-        let allTaskitems=this.props.tasks.map((task)=>{
-            return (<TaskItem task={task}/> )
+        let allTaskitems=this.props.tasks.map((task,index)=>{
+            return (<TaskItem task={task} key={index}/> )
         })
         return (
             <>

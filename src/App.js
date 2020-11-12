@@ -11,6 +11,9 @@ class App extends Component {
   //Click function refer line 25
   markAllDone=(event)=>{
     console.group('it works!!!');
+    this.setState({
+      tasks:[],
+    });
   }
   render() { 
     return (
