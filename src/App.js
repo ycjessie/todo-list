@@ -17,7 +17,9 @@ class App extends Component {
   }
   addTask=(event)=>{
     event.preventDefault();//the whole page will not reload
-    console.log("add a task");
+    //event.target get the whole form on console log
+    //event.target[0] is to get the input box text
+    console.log("add a task", event.target);
   }
   render() { 
     return (
@@ -34,7 +36,7 @@ class App extends Component {
         <form onSubmit={this.addTask}>
             <input 
               type="text"
-              placeholder="add a task here!"/>
+              placeholder="add a new task here!"/>
             {/* <button onClick={this.addTask}>Add Task</button> */}
             <button type="submit">Add Task</button>
 
